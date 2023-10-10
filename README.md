@@ -1,5 +1,5 @@
 # UserManagementAPI
-	 Task: Create a ASP.NET Core Web API that will expose CRUD (Create, Read, Update, Delete) operations to manage the list of users.
+Task: Create a ASP.NET Core Web API that will expose CRUD (Create, Read, Update, Delete) operations to manage the list of users.
 ## Architecture
 This solution was developed on Onion architecture with the folowing stack:
 ### Main:

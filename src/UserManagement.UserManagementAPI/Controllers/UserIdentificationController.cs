@@ -1,4 +1,6 @@
-﻿namespace UserManagement.Common.JwtTokenAuth.Controllers;
+﻿using UserManagement.UserManagementAPI.Helpers;
+
+namespace UserManagement.Common.JwtTokenAuth.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -23,8 +25,26 @@ public class UserIdentificationController : ControllerBase
     /// Register new user.
     /// </summary>
     /// <param name="creatableUser">.</param>
-    /// <returns>..</returns>
+    /// <returns>ActionResult.</returns>
+    /// <remarks>
+    /// Sample request:
+    ///
+    ///     GET
+    ///     {
+    ///        "Name": "New Name",
+    ///        "Age": 45,
+    ///        "Email": "new@ema.il",
+    ///        "Password": "****",
+    ///     }.
+    ///
+    /// </remarks>
+    /// <response code="200">Ok.</response>
+    /// <response code="400">Bad request - Invalid payload.</response>
+    /// <response code="500">Perhaps the validation failed.</response>
     [HttpPost("Register")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<IActionResult> Register([FromBody] RegisterModel creatableUser)
     {
         _logger.LogInformation("Trying to register a new user.");
@@ -42,6 +62,8 @@ public class UserIdentificationController : ControllerBase
                 },
             });
         }
+
+        await ValidationHelper.ValidateAsync(creatableUser, _userRepository);
 
         var existingUser = await _userRepository.GetUserByEmailAsync(creatableUser.Email);
 
@@ -103,12 +125,26 @@ public class UserIdentificationController : ControllerBase
     /// <summary>
     /// Login existing user.
     /// </summary>
-    /// <param name="model">.</param>
-    /// <returns>..</returns>
+    /// <param name="loginModel">.</param>
+    /// <returns>ActionResult.</returns>
+    /// <remarks>
+    /// Sample request:
+    ///
+    ///     GET
+    ///     {
+    ///        "Email": "new@ema.il",
+    ///        "Password": "****",
+    ///     }.
+    ///
+    /// </remarks>
+    /// <response code="200">Ok.</response>
+    /// <response code="400">Bad request - Invalid payload.</response>
     [HttpPost("Login")]
-    public async Task<IActionResult> Login([FromBody] LoginModel model)
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<IActionResult> Login([FromBody] LoginModel loginModel)
     {
-        var userEmail = model.Email;
+        var userEmail = loginModel.Email;
         _logger.LogInformation("Trying to login with user email {modelEmail}.", userEmail);
 
         if (!ModelState.IsValid)
@@ -125,7 +161,7 @@ public class UserIdentificationController : ControllerBase
             });
         }
 
-        var existingUser = await _userRepository.GetUserByEmailAsync(model.Email);
+        var existingUser = await _userRepository.GetUserByEmailAsync(loginModel.Email);
 
         if (existingUser is null)
         {
@@ -142,7 +178,7 @@ public class UserIdentificationController : ControllerBase
         }
 
         var existingUserName = existingUser.Name;
-        var passwordHash = BitConverter.ToString(SHA256.HashData(Encoding.UTF8.GetBytes(model.Password))).Replace("-", string.Empty);
+        var passwordHash = BitConverter.ToString(SHA256.HashData(Encoding.UTF8.GetBytes(loginModel.Password))).Replace("-", string.Empty);
         var isCorrect = await _userRepository.CheckPasswordAsync(existingUser.Id, passwordHash);
 
         if (!isCorrect)

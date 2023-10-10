@@ -1,4 +1,6 @@
-﻿namespace UserManagement.UserManagementAPI.Controllers;
+﻿using UserManagement.UserManagementAPI.Helpers;
+
+namespace UserManagement.UserManagementAPI.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -67,15 +69,21 @@ public class UserController : ControllerBase
     ///
     /// </remarks>
     /// <response code="200">Ok.</response>
-    /// <response code="400">Bad request - cretableUser is null.</response>
+    /// <response code="400">Bad request - user is null.</response>
+    /// <response code="500">Perhaps the validation failed.</response>
     [HttpPost("user")]
     [AllowAnonymous]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<User>> CreateUserAsync(User cretableUser, string password)
     {
         if (cretableUser is null)
         {
             return BadRequest();
         }
+
+        await ValidationHelper.ValidateAsync(cretableUser, _userRepository);
 
         var newUser = new User
         {
@@ -92,6 +100,7 @@ public class UserController : ControllerBase
     /// Updates the specified <paramref name="updatableUser"/> in the backing store.
     /// </summary>
     /// <param name="updatableUser">The user to update.</param>
+    /// <param name="newPassword">New password.</param>
     /// <returns>
     /// The <see cref="Task"/> that represents the asynchronous operation, containing the <see cref="ActionResult"/>
     /// of the operation.
@@ -107,16 +116,18 @@ public class UserController : ControllerBase
     ///        "Email": "new@ema.il",
     ///        "PasswordHash": "??",
     ///        "Roles": "??",
-    ///        "Password": "newPassword"
+    ///        "newPassword": "newPassword"
     ///     }.
     ///
     /// </remarks>
     /// <response code="200">Ok.</response>
     /// <response code="400">Bad request - cretableUser is null.</response>
+    /// <response code="500">Perhaps the validation failed.</response>
     [HttpPut("user")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<User>> UpdateUserAsync(User updatableUser)
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<User>> UpdateUserAsync(User updatableUser, string newPassword = "")
     {
         var existingUser = (await _userRepository.GetUserByIdAsync(updatableUser.Id!))!;
         if (existingUser is null)
@@ -124,12 +135,18 @@ public class UserController : ControllerBase
             return BadRequest();
         }
 
+        await ValidationHelper.ValidateAsync(updatableUser, _userRepository);
+        var hasPasswordChanged = updatableUser.PasswordHash != existingUser.PasswordHash;
+        var password = hasPasswordChanged && !string.IsNullOrEmpty(newPassword)
+                ? BitConverter.ToString(SHA256.HashData(Encoding.UTF8.GetBytes(newPassword))).Replace("-", string.Empty)
+                : existingUser.PasswordHash;
+
         var updatedUser = new User
         {
             Name = updatableUser.Name,
             Age = updatableUser.Age,
             Email = updatableUser.Email,
-            PasswordHash = updatableUser.PasswordHash,
+            PasswordHash = password,
             Roles = updatableUser.Roles,
         };
 
@@ -140,7 +157,16 @@ public class UserController : ControllerBase
     /// <summary>
     /// Delete selected user.
     /// </summary>
-    /// <returns>.</returns>
+    /// <returns>ActionResult.</returns>
+    /// <remarks>
+    /// Sample request:
+    ///
+    ///     DELETE
+    ///     {
+    ///        "Id": "??",
+    ///     }.
+    ///
+    /// </remarks>
     /// <response code="200">Ok.</response>
     /// <response code="401">If you aren't authorize.</response>
     /// <response code="404">If the item is null.</response>
@@ -163,9 +189,23 @@ public class UserController : ControllerBase
     /// <summary>
     /// Returns selected user.
     /// </summary>
-    /// <returns>.</returns>
+    /// <param name="userId">userId.</param>
+    /// <returns>Existed User, if any.</returns>
+    /// <remarks>
+    /// Sample request:
+    ///
+    ///     GET
+    ///     {
+    ///        "userId": "sfsdfs-dfsdf-sdsfsdfsdf",
+    ///     }.
+    ///
+    /// </remarks>
+    /// <response code="200">Ok.</response>
+    /// <response code="400">If the item is null.</response>
     [HttpGet("user/{userId}")]
     [AllowAnonymous]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<User>> GetByIdUserAsync(string userId)
     {
         var user = await _userRepository.GetUserByIdAsync(userId);
@@ -175,7 +215,19 @@ public class UserController : ControllerBase
     /// <summary>
     /// Returns selected users role.
     /// </summary>
-    /// <returns>.</returns>
+    /// <param name="userId">userId.</param>
+    /// <returns>Roles as a string, of existed User, if any.</returns>
+    /// <remarks>
+    /// Sample request:
+    ///
+    ///     GET
+    ///     {
+    ///        "userId": "sfsdfs-dfsdf-sdsfsdfsdf",
+    ///     }.
+    ///
+    /// </remarks>
+    /// <response code="200">Ok.</response>
+    /// <response code="404">If the item is null.</response>
     [HttpGet("role/{userId}")]
     [AllowAnonymous]
     [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
@@ -194,7 +246,21 @@ public class UserController : ControllerBase
     /// <summary>
     /// Change role selected user.
     /// </summary>
-    /// <returns>.</returns>
+    /// <param name="userId">userId.</param>
+    /// <param name="roles">roles.</param>
+    /// <returns>ActionResult.</returns>
+    /// <remarks>
+    /// Sample request:
+    ///
+    ///     GET
+    ///     {
+    ///        "userId": "sfsdfs-dfsdf-sdsfsdfsdf",
+    ///        "roles": "SuperAdmin,User,Admin",
+    ///     }.
+    ///
+    /// </remarks>
+    /// <response code="200">Ok.</response>
+    /// <response code="400">If the item is null.</response>
     [HttpPut("role/{userId}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
