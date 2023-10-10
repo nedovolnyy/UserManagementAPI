@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+
+    <PropertyGroup>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <CurrentYear>$([System.DateTime]::Now.ToString(yyyy))</CurrentYear>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)StrongRuleSet.ruleset</CodeAnalysisRuleSet>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" ExcludeAssets="All" PrivateAssets="All" />
+        <PackageReference Include="SonarAnalyzer.CSharp" Version="9.11.0.78383" ExcludeAssets="All" PrivateAssets="All"/>
+    </ItemGroup>
+</Project>

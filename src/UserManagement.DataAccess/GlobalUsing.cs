@@ -1,0 +1,12 @@
+﻿global using System.Dynamic;
+global using System.Linq.Dynamic.Core;
+global using System.Reflection;
+global using System.Text;
+global using Microsoft.EntityFrameworkCore;
+global using UserManagement.Common.DI;
+global using UserManagement.Common.DI.IHelpers;
+global using UserManagement.Common.Entities;
+global using UserManagement.Common.PaginationParameters;
+global using UserManagement.DataAccess.EntityFramework;
+global using UserManagement.DataAccess.Helpers;
+global using UserManagement.DataAccess.Repositories;
