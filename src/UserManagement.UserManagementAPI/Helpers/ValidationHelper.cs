@@ -1,34 +1,37 @@
-﻿namespace UserManagement.UserManagementAPI.Helpers
+﻿namespace UserManagement.UserManagementAPI.Helpers;
+
+public class ValidationHelper
 {
-    public static class ValidationHelper
+    protected ValidationHelper()
     {
-        internal static async Task ValidateAsync(User user, IUserRepository userRepository)
+    }
+
+    public static async Task ValidateAsync(User user, IUserRepository userRepository)
+    {
+        if (string.IsNullOrEmpty(user.Name))
         {
-            if (string.IsNullOrEmpty(user.Name))
-            {
-                throw new ValidationException("The field 'Name' of User is not allowed to be empty!");
-            }
+            throw new ValidationException("The field 'Name' of User is not allowed to be empty!");
+        }
 
-            if (user.Age == default)
-            {
-                throw new ValidationException("The field 'Age' of User is not allowed to be null!");
-            }
+        if (user.Age == default)
+        {
+            throw new ValidationException("The field 'Age' of User is not allowed to be null!");
+        }
 
-            if (user.Age < 1)
-            {
-                throw new ValidationException("The field 'Age' of User is not correct!");
-            }
+        if (user.Age < 1)
+        {
+            throw new ValidationException("The field 'Age' of User is not correct!");
+        }
 
-            if (string.IsNullOrEmpty(user.Email))
-            {
-                throw new ValidationException("The field 'Email' of User is not allowed to be empty!");
-            }
+        if (string.IsNullOrEmpty(user.Email))
+        {
+            throw new ValidationException("The field 'Email' of User is not allowed to be empty!");
+        }
 
-            var chekingUser = await userRepository.GetUserByEmailAsync(user.Email);
-            if (chekingUser is not null)
-            {
-                throw new ValidationException("An user exists with this email!");
-            }
+        var chekingUser = await userRepository.GetUserByEmailAsync(user.Email);
+        if (chekingUser is not null)
+        {
+            throw new ValidationException("An user exists with this email!");
         }
     }
 }

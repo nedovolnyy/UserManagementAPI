@@ -1,0 +1,89 @@
+{
+  "items": [
+    {
+      "Name": "Honin Senya",
+      "Age": 14,
+      "Email": "HONINSENYA@TEST.COM",
+      "PasswordHash": "9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08",
+      "Roles": "User",
+      "Id": "119af843-6b09-4ede-90a9-d0679be2d63e"
+    },
+    {
+      "Name": "Krot Artsiom",
+      "Age": 31,
+      "Email": "ADMIN@ADMIN.COM",
+      "PasswordHash": "8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918",
+      "Roles": "Admin, SuperAdmin",
+      "Id": "1509fd70-c234-46fc-bdad-1d4ed54e4cb4"
+    },
+    {
+      "Name": "Korobin Stepan",
+      "Age": 12,
+      "Email": "KOROBINSTEPAN@TEST.COM",
+      "PasswordHash": "9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08",
+      "Roles": "User",
+      "Id": "1bf99287-297d-47c6-804e-6db690871144"
+    },
+    {
+      "Name": "Lopatsin Artsiom",
+      "Age": 21,
+      "Email": "LOPATSINARTSIOM@TEST.COM",
+      "PasswordHash": "9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08",
+      "Roles": "User",
+      "Id": "1ffee6bf-c3ae-4454-a7e1-4c38867bb962"
+    },
+    {
+      "Name": "Vasin Ivan",
+      "Age": 22,
+      "Email": "VASINIVAN@TEST.COM",
+      "PasswordHash": "9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08",
+      "Roles": "User",
+      "Id": "217b7d37-3239-4188-b43d-e8c67f1e7de6"
+    },
+    {
+      "Name": "Foleev Foley",
+      "Age": 55,
+      "Email": "FOLEEVFOLEY@TEST.COM",
+      "PasswordHash": "9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08",
+      "Roles": "User",
+      "Id": "48ed4687-b7bb-40b4-a1d6-b0045290cc0b"
+    },
+    {
+      "Name": "Karpov Valeriy",
+      "Age": 48,
+      "Email": "KARPOVVALERIY@TEST.COM",
+      "PasswordHash": "9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08",
+      "Roles": "Support",
+      "Id": "4ae0d943-f4e6-4c58-a6f6-50b300b8aab6"
+    },
+    {
+      "Name": "Krasin Vasya",
+      "Age": 65,
+      "Email": "KRASINVASYA@TEST.COM",
+      "PasswordHash": "9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08",
+      "Roles": "User",
+      "Id": "6c9fff71-a1da-482a-9739-fc2b407aa6f2"
+    },
+    {
+      "Name": "Belov Pavel",
+      "Age": 15,
+      "Email": "BELOVPAVEL@TEST.COM",
+      "PasswordHash": "9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08",
+      "Roles": "User",
+      "Id": "6e9abedd-4812-44f1-89fb-27d3a82e8f55"
+    },
+    {
+      "Name": "Penkin Sidor",
+      "Age": 18,
+      "Email": "PENKINSIDOR@TEST.COM",
+      "PasswordHash": "9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08",
+      "Roles": "User",
+      "Id": "935e709e-d6ee-40cb-aebe-1e691907c01a"
+    }
+  ],
+  "totalPages": 2,
+  "pageNumber": 1,
+  "totalCount": 16,
+  "hasPreviousPage": false,
+  "hasNextPage": true
+}

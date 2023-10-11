@@ -14,7 +14,11 @@
     <EmbeddedResource Remove="Logging\**" />
     <None Remove="Logging\**" />
   </ItemGroup>
-
+  
+  <ItemGroup>
+    <InternalsVisibleTo Include="UserManagement.IntegrationTests" />
+  </ItemGroup>
+  
   <ItemGroup>
     <Compile Remove="Client\UserApiClientGenerated.cs" />
   </ItemGroup>
