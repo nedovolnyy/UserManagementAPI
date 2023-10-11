@@ -36,9 +36,7 @@
   <ItemGroup>
     <EmbeddedResource Include="WebAPI\expectedJSONs\response_getRoleById.json" />
     <EmbeddedResource Include="WebAPI\expectedJSONs\response_getUserById.json" />
-    <EmbeddedResource Include="WebAPI\expectedJSONs\response_getUsers.json">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </EmbeddedResource>
+    <EmbeddedResource Include="WebAPI\expectedJSONs\response_getUsers.json" />
     <EmbeddedResource Include="WebAPI\expectedJSONs\response_getUsersWithParams.json" />
   </ItemGroup>
 
