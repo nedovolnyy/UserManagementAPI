@@ -1,0 +1,67 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <OutputType>Library</OutputType>
+    <IsPackable>false</IsPackable>
+    <EnvironmentName>Testing</EnvironmentName>
+    <Nullable>disable</Nullable>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <SpaRoot>ClientApp\</SpaRoot>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
+    <SpaClientUrl>https://localhost:7001</SpaClientUrl>
+    <SpaLaunchCommand>npm start</SpaLaunchCommand>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="dotnet build ../../src/UserManagement.DatabaseSQL /p:NetCoreBuild=true" />
+  </Target>
+
+  <ItemGroup>
+    <Content Remove="WebAPI\expectedJSONs\response_getRoleById.json" />
+    <Content Remove="WebAPI\expectedJSONs\response_getUserById.json" />
+    <Content Remove="WebAPI\expectedJSONs\response_getUsers.json" />
+    <Content Remove="WebAPI\expectedJSONs\response_getUsersWithParams.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\..\src\UserManagement.DatabaseSQL\bin\Debug\UserManagement.Database.dacpac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="WebAPI\expectedJSONs\response_getRoleById.json" />
+    <EmbeddedResource Include="WebAPI\expectedJSONs\response_getUserById.json" />
+    <EmbeddedResource Include="WebAPI\expectedJSONs\response_getUsers.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WebAPI\expectedJSONs\response_getUsersWithParams.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="6.12.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="7.0.12" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
+    <PackageReference Include="Microsoft.SqlServer.DacFx" Version="162.0.52" />
+    <PackageReference Include="NUnit" Version="3.13.3" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\UserManagement.Common\UserManagement.Common.csproj" />
+    <ProjectReference Include="..\..\src\UserManagement.DataAccess\UserManagement.DataAccess.csproj" />
+    <ProjectReference Include="..\..\src\UserManagement.UserManagementAPI\UserManagement.UserManagementAPI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="SonarAnalyzer.CSharp" Version="9.11.0.78383">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>none</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>

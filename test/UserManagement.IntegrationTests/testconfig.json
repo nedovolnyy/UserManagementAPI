@@ -1,0 +1,16 @@
+{
+  "Logging": {
+    "FilePath": "Logging/log.txt"
+  },
+  "buildOptions": {
+    "emitEntryPoint": true
+  },
+  "ConnectionStrings": {
+    "DefaultConnection": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=TestUserManagement.Database;Integrated Security=True;Encrypt=False"
+  },
+  "Database": {
+    "DefaultDatabaseName": "TestUserManagement.Database",
+    "DefaultDatabaseFileName": "UserManagement.Database.dacpac"
+  },
+  "AllowedHosts": "*"
+}

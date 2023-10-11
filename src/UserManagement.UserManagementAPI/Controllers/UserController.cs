@@ -45,7 +45,7 @@ public class UserController : ControllerBase
     {
         var users = _userRepository.GetUsers(queryStringParams);
         var userCount = users.Items.Count;
-        _logger.LogInformation("Returned {UserCount} users from database.", userCount);
+        _logger!.LogInformation("Returned {UserCount} users from database.", userCount);
         return users;
     }
 
