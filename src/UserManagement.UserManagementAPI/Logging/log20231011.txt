@@ -1,0 +1,235 @@
+2023-10-11 02:36:53.295 +03:00 [INF] User profile is available. Using 'C:\Users\AKrot\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-11 02:36:53.463 +03:00 [WRN] Overriding address(es) 'https://localhost:7001, http://localhost:7011'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2023-10-11 02:36:53.519 +03:00 [INF] Now listening on: https://0.0.0.0:7001
+2023-10-11 02:36:53.521 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-11 02:36:53.522 +03:00 [INF] Hosting environment: Development
+2023-10-11 02:36:53.523 +03:00 [INF] Content root path: D:\Trainee\vebtech\UserManagement\src\UserManagement.UserManagementAPI
+2023-10-11 02:36:54.624 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/swagger/index.html - -
+2023-10-11 02:36:54.991 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/swagger/index.html - - - 200 - text/html;+charset=utf-8 367.3712ms
+2023-10-11 02:36:55.000 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+2023-10-11 02:36:55.042 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - - - 200 12395 application/javascript;+charset=utf-8 42.2063ms
+2023-10-11 02:36:55.100 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+2023-10-11 02:36:55.151 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 51.2487ms
+2023-10-11 02:36:55.689 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/swagger/UserManagement API v1.0/swagger.json - -
+2023-10-11 02:36:56.595 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/swagger/UserManagement API v1.0/swagger.json - - - 200 - application/json;+charset=utf-8 905.7059ms
+2023-10-11 02:37:02.445 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/swagger/UserManagement API v1.0/swagger.json - -
+2023-10-11 02:37:02.449 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/swagger/UserManagement API v1.0/swagger.json - - - 200 - application/json;+charset=utf-8 3.2130ms
+2023-10-11 02:37:14.050 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/User/users - -
+2023-10-11 02:37:14.882 +03:00 [INF] Executing endpoint 'UserManagement.UserManagementAPI.Controllers.UserController.GetPagedListOfUsers (UserManagement.UserManagementAPI)'
+2023-10-11 02:37:14.969 +03:00 [INF] Executed endpoint 'UserManagement.UserManagementAPI.Controllers.UserController.GetPagedListOfUsers (UserManagement.UserManagementAPI)'
+2023-10-11 02:37:15.243 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Multiple constructors accepting all given argument types have been found in type 'UserManagement.UserManagementAPI.Controllers.UserController'. There should only be one applicable constructor.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.TryFindMatchingConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& parameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& matchingParameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactory(Type instanceType, Type[] argumentTypes)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.CreateActivator(ControllerActionDescriptor descriptor)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.CreateControllerFactory(ControllerActionDescriptor descriptor)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvokerCache.GetCachedResult(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Routing.ControllerRequestDelegateFactory.<>c__DisplayClass12_0.<CreateRequestDelegate>b__0(HttpContext context)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-10-11 02:37:15.274 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/User/users - - - 500 - text/plain;+charset=utf-8 1224.1112ms
+2023-10-11 02:42:12.182 +03:00 [INF] User profile is available. Using 'C:\Users\AKrot\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-11 02:42:12.356 +03:00 [WRN] Overriding address(es) 'https://localhost:7001, http://localhost:7011'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2023-10-11 02:42:12.398 +03:00 [INF] Now listening on: https://0.0.0.0:7001
+2023-10-11 02:42:12.400 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-11 02:42:12.401 +03:00 [INF] Hosting environment: Development
+2023-10-11 02:42:12.402 +03:00 [INF] Content root path: D:\Trainee\vebtech\UserManagement\src\UserManagement.UserManagementAPI
+2023-10-11 02:42:15.740 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/swagger/index.html - -
+2023-10-11 02:42:16.316 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+2023-10-11 02:42:16.327 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/swagger/index.html - - - 200 - text/html;+charset=utf-8 588.1613ms
+2023-10-11 02:42:16.361 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - - - 200 12395 application/javascript;+charset=utf-8 44.9365ms
+2023-10-11 02:42:16.493 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+2023-10-11 02:42:16.554 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 63.2652ms
+2023-10-11 02:42:17.258 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/swagger/UserManagement API v1.0/swagger.json - -
+2023-10-11 02:42:18.465 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/swagger/UserManagement API v1.0/swagger.json - - - 200 - application/json;+charset=utf-8 1206.4069ms
+2023-10-11 02:42:20.494 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/swagger/UserManagement API v1.0/swagger.json - -
+2023-10-11 02:42:20.497 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/swagger/UserManagement API v1.0/swagger.json - - - 200 - application/json;+charset=utf-8 3.6631ms
+2023-10-11 02:42:27.329 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/User/users - -
+2023-10-11 02:42:27.643 +03:00 [INF] Executing endpoint 'UserManagement.UserManagementAPI.Controllers.UserController.GetPagedListOfUsers (UserManagement.UserManagementAPI)'
+2023-10-11 02:42:27.670 +03:00 [INF] Route matched with {action = "GetPagedListOfUsers", controller = "User"}. Executing controller action with signature UserManagement.Common.PaginationParameters.PagedList`1[System.Dynamic.ExpandoObject] GetPagedListOfUsers(UserManagement.Common.PaginationParameters.QueryStringParameters) on controller UserManagement.UserManagementAPI.Controllers.UserController (UserManagement.UserManagementAPI).
+2023-10-11 02:42:28.949 +03:00 [INF] Executed action UserManagement.UserManagementAPI.Controllers.UserController.GetPagedListOfUsers (UserManagement.UserManagementAPI) in 1269.5253ms
+2023-10-11 02:42:29.027 +03:00 [INF] Executed endpoint 'UserManagement.UserManagementAPI.Controllers.UserController.GetPagedListOfUsers (UserManagement.UserManagementAPI)'
+2023-10-11 02:42:29.343 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'UserManagement.UserManagementAPI.Helpers.ValidationHelper' while attempting to activate 'UserManagement.UserManagementAPI.Controllers.UserController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method448(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-10-11 02:42:29.379 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/User/users - - - 500 - text/plain;+charset=utf-8 2049.4319ms
+2023-10-11 02:48:19.105 +03:00 [INF] User profile is available. Using 'C:\Users\AKrot\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-11 02:48:19.285 +03:00 [WRN] Overriding address(es) 'https://localhost:7001, http://localhost:7011'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2023-10-11 02:48:19.333 +03:00 [INF] Now listening on: https://0.0.0.0:7001
+2023-10-11 02:48:19.335 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-11 02:48:19.336 +03:00 [INF] Hosting environment: Development
+2023-10-11 02:48:19.338 +03:00 [INF] Content root path: D:\Trainee\vebtech\UserManagement\src\UserManagement.UserManagementAPI
+2023-10-11 02:48:22.211 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/swagger/index.html - -
+2023-10-11 02:48:22.639 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+2023-10-11 02:48:22.647 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/swagger/index.html - - - 200 - text/html;+charset=utf-8 436.4366ms
+2023-10-11 02:48:22.678 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - - - 200 12395 application/javascript;+charset=utf-8 38.1859ms
+2023-10-11 02:48:22.747 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+2023-10-11 02:48:22.814 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 66.5910ms
+2023-10-11 02:48:23.268 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/swagger/UserManagement API v1.0/swagger.json - -
+2023-10-11 02:48:24.081 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/swagger/UserManagement API v1.0/swagger.json - - - 200 - application/json;+charset=utf-8 812.6819ms
+2023-10-11 02:48:32.617 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/swagger/UserManagement API v1.0/swagger.json - -
+2023-10-11 02:48:32.622 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/swagger/UserManagement API v1.0/swagger.json - - - 200 - application/json;+charset=utf-8 5.4127ms
+2023-10-11 02:48:39.481 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/User/users - -
+2023-10-11 02:48:39.798 +03:00 [INF] Executing endpoint 'UserManagement.UserManagementAPI.Controllers.UserController.GetPagedListOfUsers (UserManagement.UserManagementAPI)'
+2023-10-11 02:48:39.821 +03:00 [INF] Route matched with {action = "GetPagedListOfUsers", controller = "User"}. Executing controller action with signature UserManagement.Common.PaginationParameters.PagedList`1[System.Dynamic.ExpandoObject] GetPagedListOfUsers(UserManagement.Common.PaginationParameters.QueryStringParameters) on controller UserManagement.UserManagementAPI.Controllers.UserController (UserManagement.UserManagementAPI).
+2023-10-11 02:48:42.664 +03:00 [INF] Executed DbCommand (98ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-10-11 02:48:42.707 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-10-11 02:48:47.316 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Age], [u].[Email], [u].[Name], [u].[PasswordHash], [u].[Roles]
+FROM [Users] AS [u]
+ORDER BY [u].[Id]
+2023-10-11 02:48:47.328 +03:00 [INF] Returned 10 users from database.
+2023-10-11 02:48:47.336 +03:00 [INF] Executing ObjectResult, writing value of type 'UserManagement.Common.PaginationParameters.PagedList`1[[System.Dynamic.ExpandoObject, System.Linq.Expressions, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a]]'.
+2023-10-11 02:48:47.366 +03:00 [INF] Executed action UserManagement.UserManagementAPI.Controllers.UserController.GetPagedListOfUsers (UserManagement.UserManagementAPI) in 7537.0119ms
+2023-10-11 02:48:47.369 +03:00 [INF] Executed endpoint 'UserManagement.UserManagementAPI.Controllers.UserController.GetPagedListOfUsers (UserManagement.UserManagementAPI)'
+2023-10-11 02:48:47.380 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/User/users - - - 200 2169 application/json;+charset=utf-8 7899.0391ms
+2023-10-11 03:25:43.290 +03:00 [INF] User profile is available. Using 'C:\Users\AKrot\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-11 03:25:43.457 +03:00 [WRN] Overriding address(es) 'https://localhost:7001, http://localhost:7011'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2023-10-11 03:25:43.500 +03:00 [INF] Now listening on: https://0.0.0.0:7001
+2023-10-11 03:25:43.502 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-11 03:25:43.503 +03:00 [INF] Hosting environment: Development
+2023-10-11 03:25:43.504 +03:00 [INF] Content root path: D:\Trainee\vebtech\UserManagement\src\UserManagement.UserManagementAPI
+2023-10-11 03:25:46.341 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/swagger/index.html - -
+2023-10-11 03:25:46.969 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+2023-10-11 03:25:46.987 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/swagger/index.html - - - 200 - text/html;+charset=utf-8 645.3831ms
+2023-10-11 03:25:47.011 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - - - 200 12395 application/javascript;+charset=utf-8 43.1207ms
+2023-10-11 03:25:47.084 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+2023-10-11 03:25:47.195 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 111.3406ms
+2023-10-11 03:25:47.805 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/swagger/UserManagement API v1.0/swagger.json - -
+2023-10-11 03:25:48.663 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/swagger/UserManagement API v1.0/swagger.json - - - 200 - application/json;+charset=utf-8 857.5698ms
+2023-10-11 03:26:04.530 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/swagger/UserManagement API v1.0/swagger.json - -
+2023-10-11 03:26:04.533 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/swagger/UserManagement API v1.0/swagger.json - - - 200 - application/json;+charset=utf-8 3.5002ms
+2023-10-11 03:28:21.328 +03:00 [INF] User profile is available. Using 'C:\Users\AKrot\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-11 03:28:21.484 +03:00 [WRN] Overriding address(es) 'https://localhost:7001, http://localhost:7011'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2023-10-11 03:28:21.529 +03:00 [INF] Now listening on: https://0.0.0.0:7001
+2023-10-11 03:28:21.532 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-11 03:28:21.533 +03:00 [INF] Hosting environment: Development
+2023-10-11 03:28:21.534 +03:00 [INF] Content root path: D:\Trainee\vebtech\UserManagement\src\UserManagement.UserManagementAPI
+2023-10-11 03:28:24.813 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/swagger/index.html - -
+2023-10-11 03:28:25.304 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+2023-10-11 03:28:25.305 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/swagger/index.html - - - 200 - text/html;+charset=utf-8 488.0196ms
+2023-10-11 03:28:25.345 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - - - 200 12395 application/javascript;+charset=utf-8 40.7452ms
+2023-10-11 03:28:25.416 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+2023-10-11 03:28:25.556 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 139.8974ms
+2023-10-11 03:28:25.926 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/swagger/UserManagement API v1.0/swagger.json - -
+2023-10-11 03:28:26.751 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/swagger/UserManagement API v1.0/swagger.json - - - 200 - application/json;+charset=utf-8 825.4099ms
+2023-10-11 03:28:47.542 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/swagger/UserManagement API v1.0/swagger.json - -
+2023-10-11 03:28:47.545 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/swagger/UserManagement API v1.0/swagger.json - - - 200 - application/json;+charset=utf-8 3.8736ms
+2023-10-11 03:29:42.526 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/User/user/1509fd70-c234-46fc-bdad-1d4ed54e4cb4 - -
+2023-10-11 03:29:42.839 +03:00 [INF] Executing endpoint 'UserManagement.UserManagementAPI.Controllers.UserController.GetByIdUserAsync (UserManagement.UserManagementAPI)'
+2023-10-11 03:29:42.867 +03:00 [INF] Route matched with {action = "GetByIdUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserManagement.Common.Entities.User]] GetByIdUserAsync(System.String) on controller UserManagement.UserManagementAPI.Controllers.UserController (UserManagement.UserManagementAPI).
+2023-10-11 03:29:44.473 +03:00 [INF] Executed DbCommand (64ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Age], [u].[Email], [u].[Name], [u].[PasswordHash], [u].[Roles]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2023-10-11 03:29:44.529 +03:00 [INF] Executing OkObjectResult, writing value of type 'UserManagement.Common.Entities.User'.
+2023-10-11 03:29:44.565 +03:00 [INF] Executed action UserManagement.UserManagementAPI.Controllers.UserController.GetByIdUserAsync (UserManagement.UserManagementAPI) in 1689.2636ms
+2023-10-11 03:29:44.569 +03:00 [INF] Executed endpoint 'UserManagement.UserManagementAPI.Controllers.UserController.GetByIdUserAsync (UserManagement.UserManagementAPI)'
+2023-10-11 03:29:44.581 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/User/user/1509fd70-c234-46fc-bdad-1d4ed54e4cb4 - - - 200 212 application/json;+charset=utf-8 2054.7051ms
+2023-10-11 03:32:16.705 +03:00 [INF] User profile is available. Using 'C:\Users\AKrot\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-11 03:32:16.873 +03:00 [WRN] Overriding address(es) 'https://localhost:7001, http://localhost:7011'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2023-10-11 03:32:16.923 +03:00 [INF] Now listening on: https://0.0.0.0:7001
+2023-10-11 03:32:16.925 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-11 03:32:16.926 +03:00 [INF] Hosting environment: Development
+2023-10-11 03:32:16.927 +03:00 [INF] Content root path: D:\Trainee\vebtech\UserManagement\src\UserManagement.UserManagementAPI
+2023-10-11 03:32:20.654 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/swagger/index.html - -
+2023-10-11 03:32:21.290 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+2023-10-11 03:32:21.311 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/swagger/index.html - - - 200 - text/html;+charset=utf-8 657.5810ms
+2023-10-11 03:32:21.344 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - - - 200 12395 application/javascript;+charset=utf-8 54.1778ms
+2023-10-11 03:32:21.427 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+2023-10-11 03:32:21.499 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 72.5419ms
+2023-10-11 03:32:22.232 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/swagger/UserManagement API v1.0/swagger.json - -
+2023-10-11 03:32:23.292 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/swagger/UserManagement API v1.0/swagger.json - - - 200 - application/json;+charset=utf-8 1059.8163ms
+2023-10-11 03:34:18.838 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/User/role/1509fd70-c234-46fc-bdad-1d4ed54e4cb4 - -
+2023-10-11 03:34:19.176 +03:00 [INF] Executing endpoint 'UserManagement.UserManagementAPI.Controllers.UserController.GetRolesByIdAsync (UserManagement.UserManagementAPI)'
+2023-10-11 03:34:19.204 +03:00 [INF] Route matched with {action = "GetRolesById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] GetRolesByIdAsync(System.String) on controller UserManagement.UserManagementAPI.Controllers.UserController (UserManagement.UserManagementAPI).
+2023-10-11 03:34:20.828 +03:00 [INF] Executed DbCommand (64ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Age], [u].[Email], [u].[Name], [u].[PasswordHash], [u].[Roles]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2023-10-11 03:34:20.881 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-10-11 03:34:20.903 +03:00 [INF] Executed action UserManagement.UserManagementAPI.Controllers.UserController.GetRolesByIdAsync (UserManagement.UserManagementAPI) in 1692.9041ms
+2023-10-11 03:34:20.906 +03:00 [INF] Executed endpoint 'UserManagement.UserManagementAPI.Controllers.UserController.GetRolesByIdAsync (UserManagement.UserManagementAPI)'
+2023-10-11 03:34:20.918 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/User/role/1509fd70-c234-46fc-bdad-1d4ed54e4cb4 - - - 200 19 application/json;+charset=utf-8 2083.0895ms
+2023-10-11 03:38:14.384 +03:00 [INF] User profile is available. Using 'C:\Users\AKrot\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-11 03:38:14.545 +03:00 [WRN] Overriding address(es) 'https://localhost:7001, http://localhost:7011'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2023-10-11 03:38:14.589 +03:00 [INF] Now listening on: https://0.0.0.0:7001
+2023-10-11 03:38:14.591 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-11 03:38:14.592 +03:00 [INF] Hosting environment: Development
+2023-10-11 03:38:14.593 +03:00 [INF] Content root path: D:\Trainee\vebtech\UserManagement\src\UserManagement.UserManagementAPI
+2023-10-11 03:38:17.596 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/User/users?PageNumber=1&PageSize=8&FilterExpression=age%3E21&OrderBy=age&DisplayedFields=id%2Cname%2Cage%2Cemail%2Cpasswordhash%2Croles - -
+2023-10-11 03:38:18.269 +03:00 [INF] Executing endpoint 'UserManagement.UserManagementAPI.Controllers.UserController.GetPagedListOfUsers (UserManagement.UserManagementAPI)'
+2023-10-11 03:38:18.613 +03:00 [INF] Route matched with {action = "GetPagedListOfUsers", controller = "User"}. Executing controller action with signature UserManagement.Common.PaginationParameters.PagedList`1[System.Dynamic.ExpandoObject] GetPagedListOfUsers(UserManagement.Common.PaginationParameters.QueryStringParameters) on controller UserManagement.UserManagementAPI.Controllers.UserController (UserManagement.UserManagementAPI).
+2023-10-11 03:38:18.754 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/swagger/index.html - -
+2023-10-11 03:38:19.490 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+2023-10-11 03:38:19.498 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/swagger/index.html - - - 200 - text/html;+charset=utf-8 740.9656ms
+2023-10-11 03:38:19.553 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - - - 200 12395 application/javascript;+charset=utf-8 62.8540ms
+2023-10-11 03:38:19.644 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+2023-10-11 03:38:19.728 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 84.2123ms
+2023-10-11 03:38:20.451 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7001/swagger/UserManagement API v1.0/swagger.json - -
+2023-10-11 03:38:21.691 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/swagger/UserManagement API v1.0/swagger.json - - - 200 - application/json;+charset=utf-8 1239.9915ms
+2023-10-11 03:38:21.726 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-10-11 03:38:22.948 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Age] > 21) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-10-11 03:38:23.021 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Age], [u].[Email], [u].[Name], [u].[PasswordHash], [u].[Roles]
+FROM [Users] AS [u]
+WHERE [u].[Age] > 21
+ORDER BY [u].[Age]
+2023-10-11 03:38:23.032 +03:00 [INF] Returned 8 users from database.
+2023-10-11 03:38:23.043 +03:00 [INF] Executing ObjectResult, writing value of type 'UserManagement.Common.PaginationParameters.PagedList`1[[System.Dynamic.ExpandoObject, System.Linq.Expressions, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a]]'.
+2023-10-11 03:38:23.081 +03:00 [INF] Executed action UserManagement.UserManagementAPI.Controllers.UserController.GetPagedListOfUsers (UserManagement.UserManagementAPI) in 4460.5304ms
+2023-10-11 03:38:23.084 +03:00 [INF] Executed endpoint 'UserManagement.UserManagementAPI.Controllers.UserController.GetPagedListOfUsers (UserManagement.UserManagementAPI)'
+2023-10-11 03:38:23.103 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/User/users?PageNumber=1&PageSize=8&FilterExpression=age%3E21&OrderBy=age&DisplayedFields=id%2Cname%2Cage%2Cemail%2Cpasswordhash%2Croles - - - 200 1760 application/json;+charset=utf-8 5510.4583ms

@@ -22,6 +22,11 @@
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
     <GenerateCreateScript>True</GenerateCreateScript>
+    <DacApplicationName>UserManagement.Database</DacApplicationName>
+    <IncludeSchemaNameInFileName>False</IncludeSchemaNameInFileName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <SqlTargetName>UserManagement.Database</SqlTargetName>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Properties" />

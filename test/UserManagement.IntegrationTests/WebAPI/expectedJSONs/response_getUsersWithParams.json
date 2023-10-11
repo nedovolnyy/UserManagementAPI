@@ -1,0 +1,73 @@
+{
+  "items": [
+    {
+      "Id": "217b7d37-3239-4188-b43d-e8c67f1e7de6",
+      "Name": "Vasin Ivan",
+      "Age": 22,
+      "Email": "VASINIVAN@TEST.COM",
+      "PasswordHash": "9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08",
+      "Roles": "User"
+    },
+    {
+      "Id": "dc7ae329-60b3-4e43-8afb-8f9c2d2b29b7",
+      "Name": "Chernenko Anton",
+      "Age": 26,
+      "Email": "CHERNENKOANTON@TEST.COM",
+      "PasswordHash": "9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08",
+      "Roles": "User"
+    },
+    {
+      "Id": "1509fd70-c234-46fc-bdad-1d4ed54e4cb4",
+      "Name": "Krot Artsiom",
+      "Age": 31,
+      "Email": "ADMIN@ADMIN.COM",
+      "PasswordHash": "8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918",
+      "Roles": "Admin, SuperAdmin"
+    },
+    {
+      "Id": "f8cc2f5c-8c80-4708-8486-cad01b635cc0",
+      "Name": "Zubov Dmitriy",
+      "Age": 41,
+      "Email": "ZUBOVDMITRIY@TEST.COM",
+      "PasswordHash": "9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08",
+      "Roles": "User"
+    },
+    {
+      "Id": "4ae0d943-f4e6-4c58-a6f6-50b300b8aab6",
+      "Name": "Karpov Valeriy",
+      "Age": 48,
+      "Email": "KARPOVVALERIY@TEST.COM",
+      "PasswordHash": "9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08",
+      "Roles": "Support"
+    },
+    {
+      "Id": "48ed4687-b7bb-40b4-a1d6-b0045290cc0b",
+      "Name": "Foleev Foley",
+      "Age": 55,
+      "Email": "FOLEEVFOLEY@TEST.COM",
+      "PasswordHash": "9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08",
+      "Roles": "User"
+    },
+    {
+      "Id": "6c9fff71-a1da-482a-9739-fc2b407aa6f2",
+      "Name": "Krasin Vasya",
+      "Age": 65,
+      "Email": "KRASINVASYA@TEST.COM",
+      "PasswordHash": "9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08",
+      "Roles": "User"
+    },
+    {
+      "Id": "d829d701-db21-4946-a636-b396f3ff2c8c",
+      "Name": "Vetrov Andrey",
+      "Age": 85,
+      "Email": "VETROVANDREY@TEST.COM",
+      "PasswordHash": "9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08",
+      "Roles": "User"
+    }
+  ],
+  "totalPages": 2,
+  "pageNumber": 1,
+  "totalCount": 9,
+  "hasPreviousPage": false,
+  "hasNextPage": true
+}

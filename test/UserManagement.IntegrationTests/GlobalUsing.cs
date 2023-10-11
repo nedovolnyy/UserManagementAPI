@@ -1,0 +1,9 @@
+﻿global using System.Reflection;
+global using FluentAssertions;
+global using Microsoft.AspNetCore.Mvc.Testing;
+global using Microsoft.SqlServer.Dac;
+global using Newtonsoft.Json;
+global using NUnit.Framework;
+global using UserManagement.Common.DI;
+global using UserManagement.Common.Entities;
+global using UserManagement.Common.PaginationParameters;

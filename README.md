@@ -1,5 +1,5 @@
 # UserManagementAPI
-	 Task: Create a ASP.NET Core Web API that will expose CRUD (Create, Read, Update, Delete) operations to manage the list of users.
+Task: Create a ASP.NET Core Web API that will expose CRUD (Create, Read, Update, Delete) operations to manage the list of users.
 ## Architecture
 This solution was developed on Onion architecture with the folowing stack:
 ### Main:
@@ -9,8 +9,12 @@ This solution was developed on Onion architecture with the folowing stack:
 - MS SQL Server
 ### Libraries
 - Dynamic.LINQ for filtration
+- FluentAssertions
 - NSwag for API documentation
 - Serilog as a log provider
+- Moq for UnitTests
+- NUnit for Tests
+- DacFx for deploy test database
 ## Possible Drawbacks/Concerns (What should reviewers look out for?)
 	- 
 
@@ -21,7 +25,7 @@ This solution was developed on Onion architecture with the folowing stack:
 * [Common](src/UserManagement.Common) - Contains entity classes and validation of exception class.
 * [DataAccess Layer](src/UserManagement.DataAccess/) - Contains repository for User class.
 * [UserManagementAPI](/src/UserManagement.UserManagementAPI/) - Constains ASP.NET Core WebAPI project.
-* [Database](src/UserManagement.DatabaseSQL/) - Project database.
+* [DatabaseSQL](src/UserManagement.DatabaseSQL/) - Project database.
 * [Unit Tests](test/UserManagement.UnitTests/) Unit tests for business logic's of Controllers.
 * [Integration Tests](test/UserManagement.IntegrationTests/) for DataAccess Layer.
 
@@ -37,18 +41,18 @@ To specify another test database, enter its path in [testconfig.json](test/UserM
   },
   "Database": {
     "DefaultDatabaseName": "TestUserManagement.Database",
-    "DefaultDatabaseFileName": "TestUserManagement.Database.dacpac"
+    "DefaultDatabaseFileName": "UserManagement.Database.dacpac"
   }
 ```
 It is possible to specify absolute and relative (from the compilation folder) paths.
 
-If need, for projects [UserAPI](/src/UserManagement.UserManagementAPI/):
+If need, for projects [UserManagementAPI](/src/UserManagement.UserManagementAPI/):
 ```
   "ConnectionStrings": {
     "DefaultConnection": "Data Source=localhost\\SQLEXPRESS;Initial Catalog=UserManagement.Database;Integrated Security=True"
   },
 ```
-In configuration files: [UserAPI/appsettings.?.json](/src/UserManagement.UserManagementAPI/appsettings.Development.json)
+In configuration files: [UserManagementAPI/appsettings.?.json](/src/UserManagement.UserManagementAPI/appsettings.Development.json)
 
 # Credentials
 To log in as a SuperAdmin :

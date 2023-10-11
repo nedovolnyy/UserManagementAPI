@@ -1,5 +1,0 @@
-
-  <Target Name="GenerateNSwag" AfterTargets="Build" Condition="$(SkipSwagger) != 'true'">
-    <Exec EnvironmentVariables="ASPNETCORE_ENVIRONMENT=Development;" Command="$(NSwagExe_Net60) aspnetcore2openapi /project:&quot;$(MSBuildProjectFullPath)&quot; /nobuild:true /output:&quot;swagger/swaggerUserAPI.json&quot; /documentName:v1 /configuration:$(Configuration)" />
-    <Exec Command="$(NSwagExe_Net70) run UserApiClient.nswag /variables:Configuration=$(Configuration),OutDir=Client,InputSwagger=swagger/swaggerUserAPI.json" />
-  </Target>
