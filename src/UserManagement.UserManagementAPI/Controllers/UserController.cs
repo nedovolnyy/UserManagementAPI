@@ -80,10 +80,12 @@ public class UserController : ControllerBase
     {
         if (cretableUser is null)
         {
+            _logger!.LogInformation("Cannot create user! СretableUser is null");
             return BadRequest();
         }
 
         await ValidationHelper.ValidateAsync(cretableUser, _userRepository);
+        _logger!.LogInformation("Validation was successful.");
 
         var newUser = new User
         {
@@ -93,6 +95,8 @@ public class UserController : ControllerBase
             PasswordHash = BitConverter.ToString(SHA256.HashData(Encoding.UTF8.GetBytes(password))).Replace("-", string.Empty),
             Roles = cretableUser.Roles,
         };
+        _logger!.LogInformation("Everything is ready to create a user.");
+
         return Ok(await _userRepository.InsertUserAsync(newUser));
     }
 
@@ -132,10 +136,13 @@ public class UserController : ControllerBase
         var existingUser = (await _userRepository.GetUserByIdAsync(updatableUser.Id!))!;
         if (existingUser is null)
         {
+            _logger!.LogInformation("Cannot update user! UpdatableUser is null");
             return BadRequest();
         }
 
         await ValidationHelper.ValidateAsync(updatableUser, _userRepository);
+        _logger!.LogInformation("Validation was successful.");
+
         var hasPasswordChanged = updatableUser.PasswordHash != existingUser.PasswordHash;
         var password = hasPasswordChanged && !string.IsNullOrEmpty(newPassword)
                 ? BitConverter.ToString(SHA256.HashData(Encoding.UTF8.GetBytes(newPassword))).Replace("-", string.Empty)
@@ -150,7 +157,10 @@ public class UserController : ControllerBase
             Roles = updatableUser.Roles,
         };
 
+        _logger!.LogInformation("Everything is ready to update a user.");
         await _userRepository.UpdateUserAsync(updatedUser);
+
+        _logger!.LogInformation("Users data has been updated.");
         return Ok(updatedUser);
     }
 
@@ -179,10 +189,14 @@ public class UserController : ControllerBase
         var user = await _userRepository.GetUserByIdAsync(id);
         if (user is not null)
         {
+            _logger!.LogInformation("Everything is ready to delete a user.");
             await _userRepository.DeleteUserAsync(id);
+
+            _logger!.LogInformation("User has been deleted.");
             return Ok();
         }
 
+        _logger!.LogInformation("Cannot delete user! He don't exist with this: {id}!", id);
         return NotFound();
     }
 
@@ -209,6 +223,7 @@ public class UserController : ControllerBase
     public async Task<ActionResult<User>> GetByIdUserAsync(string userId)
     {
         var user = await _userRepository.GetUserByIdAsync(userId);
+        _logger!.LogInformation("Users data has been read.");
         return user is null ? NotFound() : Ok(user);
     }
 
@@ -237,9 +252,11 @@ public class UserController : ControllerBase
         var user = await _userRepository.GetUserByIdAsync(userId);
         if (user is null)
         {
+            _logger!.LogInformation("User don't exist with id: {userId}", userId);
             return NotFound();
         }
 
+        _logger!.LogInformation("Users data has been read.");
         return Ok(user.Roles);
     }
 
@@ -269,12 +286,15 @@ public class UserController : ControllerBase
         var user = await _userRepository.GetUserByIdAsync(userId);
         if (user is null)
         {
+            _logger!.LogInformation("User don't exist with id: {userId}", userId);
             return BadRequest();
         }
 
+        _logger!.LogInformation("Users data has been read.");
         user.Roles = string.Join(",", roles.ToArray());
         await _userRepository.UpdateUserAsync(user);
 
+        _logger!.LogInformation("Roles of user has been changed.");
         return Ok();
     }
 }

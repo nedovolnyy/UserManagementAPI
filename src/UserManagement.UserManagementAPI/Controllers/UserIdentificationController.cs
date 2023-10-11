@@ -132,8 +132,8 @@ public class UserIdentificationController : ControllerBase
     ///
     ///     GET
     ///     {
-    ///        "Email": "new@ema.il",
-    ///        "Password": "****",
+    ///        "Email": "user@example.com",
+    ///        "Password": "string",
     ///     }.
     ///
     /// </remarks>

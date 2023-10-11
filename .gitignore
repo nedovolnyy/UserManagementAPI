@@ -361,5 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-/src/UserManagement.UserManagementAPI/Logging/log20231010.txt
+/src/UserManagement.UserManagementAPI/Logging/log*.txt
 /src/UserManagement.UserManagementAPI/bat.txt
+/src/UserManagement.UserManagementAPI/UserApiClient.nswag

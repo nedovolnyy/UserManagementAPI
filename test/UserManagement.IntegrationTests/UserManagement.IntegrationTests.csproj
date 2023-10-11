@@ -7,12 +7,6 @@
     <IsPackable>false</IsPackable>
     <EnvironmentName>Testing</EnvironmentName>
     <Nullable>disable</Nullable>
-    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
-    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
-    <SpaRoot>ClientApp\</SpaRoot>
-    <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
-    <SpaClientUrl>https://localhost:7001</SpaClientUrl>
-    <SpaLaunchCommand>npm start</SpaLaunchCommand>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
@@ -36,9 +30,7 @@
   <ItemGroup>
     <EmbeddedResource Include="WebAPI\expectedJSONs\response_getRoleById.json" />
     <EmbeddedResource Include="WebAPI\expectedJSONs\response_getUserById.json" />
-    <EmbeddedResource Include="WebAPI\expectedJSONs\response_getUsers.json">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </EmbeddedResource>
+    <EmbeddedResource Include="WebAPI\expectedJSONs\response_getUsers.json" />
     <EmbeddedResource Include="WebAPI\expectedJSONs\response_getUsersWithParams.json" />
   </ItemGroup>
 
