@@ -363,3 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 /src/UserManagement.UserManagementAPI/Logging/log*.txt
 /src/UserManagement.UserManagementAPI/bat.txt
+/src/UserManagement.UserManagementAPI/UserApiClient.nswag
